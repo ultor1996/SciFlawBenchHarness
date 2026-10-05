@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T13:53:54+00:00",
+  "updated": "2026-10-05T13:56:23+00:00",
   "total": 35,
   "contributors": [
     {
@@ -8,7 +8,7 @@
     },
     {
       "email": "srawat@uni-bonn.de",
-      "tasks": 10
+      "tasks": 11
     },
     {
       "email": "umutdemirbozan@gmail.com",
@@ -16,10 +16,6 @@
     },
     {
       "email": "table..chair@awesome.com",
-      "tasks": 1
-    },
-    {
-      "email": "the (\\lambda(1405)) is a well-studied strange baryon important for understanding the baryon spectrum. it is described by a single resonance pole with a characteristic decay width. find its pole position, mass, and decay width from modern coupled-channel and nlo chiral-unitary analyses of (s=-1) meson-baryon scattering.",
       "tasks": 1
     },
     {
