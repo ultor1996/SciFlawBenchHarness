@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T13:47:59+00:00",
+  "updated": "2026-10-05T13:53:54+00:00",
   "total": 35,
   "contributors": [
     {
@@ -7,16 +7,12 @@
       "tasks": 13
     },
     {
+      "email": "srawat@uni-bonn.de",
+      "tasks": 10
+    },
+    {
       "email": "umutdemirbozan@gmail.com",
       "tasks": 9
-    },
-    {
-      "email": "s.rawat@uni-bonn.de",
-      "tasks": 8
-    },
-    {
-      "email": "srawat@uni-bonn.de",
-      "tasks": 2
     },
     {
       "email": "table..chair@awesome.com",
