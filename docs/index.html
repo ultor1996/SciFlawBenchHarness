@@ -314,6 +314,28 @@
   .logo-tile.lamar img{ width: 168px; height: 168px; }
   .logo-tile.physics img{ width: 130px; height: auto; }
 
+  /* ---------- stats ---------- */
+
+  .stats-table{
+    width: 100%;
+    max-width: 62ch;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+  .stats-table th, .stats-table td{
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.95rem;
+  }
+  .stats-table th{
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  .stats-table td:last-child, .stats-table th:last-child{ text-align: right; }
+
   /* ---------- footer ---------- */
 
   footer{
@@ -355,11 +377,12 @@
   <header class="masthead">
     <div class="wrap">
       <div class="name">SciFlaw<span>Bench</span></div>
-      <nav>
+       <nav>
         <a href="#purpose">Purpose</a>
         <a href="#harness">Harness</a>
         <a href="#contribute">Contribute</a>
         <a href="#links">Docs</a>
+        <a href="#stats">Stats</a>
         <a href="#team">Contact</a>
       </nav>
     </div>
@@ -487,7 +510,42 @@
       </div>
     </div>
   </section>
+  <section id="stats">
+    <div class="wrap section-grid">
+      <div>
+        <p class="kicker">§ — contributions</p>
+        <h2>Tasks per contributor</h2>
+        <p class="mono" id="stats-meta">Loading…</p>
+        <table class="stats-table" id="stats-table">
+          <thead><tr><th>Contributor</th><th>Tasks</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div>
+        <p class="note">Updated automatically every day from the task sheet.</p>
+      </div>
+    </div>
+  </section>
 
+  <script>
+  fetch("stats.json", { cache: "no-store" })
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      document.getElementById("stats-meta").textContent =
+        d.total + " tasks total · updated " + new Date(d.updated).toLocaleDateString();
+      var tbody = document.querySelector("#stats-table tbody");
+      d.contributors.forEach(function (c) {
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td></td><td></td>";
+        tr.children[0].textContent = c.email;
+        tr.children[1].textContent = c.tasks;
+        tbody.appendChild(tr);
+      });
+    })
+    .catch(function () {
+      document.getElementById("stats-meta").textContent = "Stats not available yet.";
+    });
+  </script>
   <section id="team">
     <div class="wrap section-grid">
       <div>
